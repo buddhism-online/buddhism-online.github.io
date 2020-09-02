@@ -19,10 +19,10 @@
 		  	background-position: left top;
 		  	background-repeat: repeat;
 		  	padding: 20px; 
-
+/*
 -webkit-box-shadow: -4px 10px 28px 8px rgba(0,0,0,0.75);
 -moz-box-shadow: -4px 10px 28px 8px rgba(0,0,0,0.75);
-box-shadow: -4px 10px 28px 8px rgba(0,0,0,0.75);
+box-shadow: -4px 10px 28px 8px rgba(0,0,0,0.75);*/
 		}
 
 		#calendar{
@@ -47,10 +47,10 @@ box-shadow: -4px 10px 28px 8px rgba(0,0,0,0.75);
 		  	padding: 20px; 
 		  	display:block;
 
-
+/*
 -webkit-box-shadow: -4px 10px 28px 8px rgba(0,0,0,0.75);
 -moz-box-shadow: -4px 10px 28px 8px rgba(0,0,0,0.75);
-box-shadow: -4px 10px 28px 8px rgba(0,0,0,0.75);
+box-shadow: -4px 10px 28px 8px rgba(0,0,0,0.75);*/
 
 		}
 
@@ -93,13 +93,13 @@ function onload(){
 	frames['calendarFrame'].document.head.appendChild(cssLink);
 
 	
-	// var frm = frames['calendarFrame'].document;
-	// var otherhead = frm.getElementsByTagName("head")[0];
-	// var link = frm.createElement("link");
-	// link.setAttribute("rel", "stylesheet");
-	// link.setAttribute("type", "text/css");
-	// link.setAttribute("href", "gcal.css");
-	// otherhead.appendChild(link);
+	var frm = frames['calendarFrame'].document;
+	var otherhead = frm.getElementsByTagName("head")[0];
+	var link = frm.createElement("link");
+	link.setAttribute("rel", "stylesheet");
+	link.setAttribute("type", "text/css");
+	link.setAttribute("href", "gcal.css");
+	otherhead.appendChild(link);
 	
 	// if (theOS.name == "Mac OS") {
 	// 	document.body.innerHTML += " Hey there Buddhist buddy. You're on a Mac 🍎 in " + tzid + "\n"

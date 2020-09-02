@@ -13,28 +13,31 @@
 		#about{
     		margin-left: auto;
     		margin-right: auto;
-    		width: 95%;
+    		width: 90%;
     		background-color: rgba(255, 255,255, 0.8);
     		border-radius: 25px;
 		  	background-position: left top;
 		  	background-repeat: repeat;
 		  	padding: 20px; 
+
+-webkit-box-shadow: -4px 10px 28px 8px rgba(0,0,0,0.75);
+-moz-box-shadow: -4px 10px 28px 8px rgba(0,0,0,0.75);
+box-shadow: -4px 10px 28px 8px rgba(0,0,0,0.75);
 		}
 
 		#calendar{
 			margin-left: auto;
     		margin-right: auto;
     		width: 100%;
+    		max-width: 40em;
     		height: 30em;
     		border-radius: 7px;
-		  	background-position: left top;
-		  	background-repeat: repeat;
 		  	display:block;
 		}
 
 		#container{
 			opacity: 0.9;
-			width: 95%;
+			width: 90%;
 			margin-left: auto;
     		margin-right: auto;
     		background-color: rgba(255, 255,255, 0.8);
@@ -43,6 +46,12 @@
 		  	background-repeat: repeat;
 		  	padding: 20px; 
 		  	display:block;
+
+
+-webkit-box-shadow: -4px 10px 28px 8px rgba(0,0,0,0.75);
+-moz-box-shadow: -4px 10px 28px 8px rgba(0,0,0,0.75);
+box-shadow: -4px 10px 28px 8px rgba(0,0,0,0.75);
+
 		}
 
 		a {
@@ -77,20 +86,20 @@ function onload(){
 		console.log("could not refresh url using reload function")
 	}
 
-	// var cssLink = document.createElement("link");
-	// cssLink.href = "gcal.css"; 
-	// cssLink.rel = "stylesheet"; 
-	// cssLink.type = "text/css"; 
-	// frames['calendarFrame'].document.head.appendChild(cssLink);
+	var cssLink = document.createElement("link");
+	cssLink.href = "gcal.css"; 
+	cssLink.rel = "stylesheet"; 
+	cssLink.type = "text/css"; 
+	frames['calendarFrame'].document.head.appendChild(cssLink);
 
 	
-	var frm = frames['calendarFrame'].document;
-	var otherhead = frm.getElementsByTagName("head")[0];
-	var link = frm.createElement("link");
-	link.setAttribute("rel", "stylesheet");
-	link.setAttribute("type", "text/css");
-	link.setAttribute("href", "gcal.css");
-	otherhead.appendChild(link);
+	// var frm = frames['calendarFrame'].document;
+	// var otherhead = frm.getElementsByTagName("head")[0];
+	// var link = frm.createElement("link");
+	// link.setAttribute("rel", "stylesheet");
+	// link.setAttribute("type", "text/css");
+	// link.setAttribute("href", "gcal.css");
+	// otherhead.appendChild(link);
 	
 	// if (theOS.name == "Mac OS") {
 	// 	document.body.innerHTML += " Hey there Buddhist buddy. You're on a Mac 🍎 in " + tzid + "\n"
@@ -109,7 +118,7 @@ function onload(){
 </script>
 
 </head>
-<body onload="onload()" ><div id="container"> <iframe name="calendarFrame"  id = 'calendar' src="" frameborder="0" scrolling="no"></iframe></div>
+<body onload="onload()" ><div id="container"> <iframe name="calendarFrame" id = 'calendar' src="" frameborder="0" scrolling="no"></iframe></div>
 <div id="about">
 Hello everyone I am Bhikkhu Varrapanyo.
 

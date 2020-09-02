@@ -7,15 +7,60 @@
 			white-space:pre-wrap;
 			font-family:sans-serif;
 			background-color:rgb(230, 230, 230);
+			background-image: url("https://eskipaper.com/images/lotus-flower-wallpaper-2.jpg");
 		}
 
+		#about{
+    		margin-left: auto;
+    		margin-right: auto;
+    		width: 80%;
+    		background-color: rgba(255, 255,255, 0.8);
+    		border-radius: 25px;
+		  	background-position: left top;
+		  	background-repeat: repeat;
+		  	padding: 20px; 
+		}
+
+		#calendar{
+			margin-left: auto;
+    		margin-right: auto;
+    		width: 80%;
+    		height: 30em;
+    		border-radius: 7px;
+		  	background-position: left top;
+		  	background-repeat: repeat;
+		  	display:block;
+		}
+
+		#container{
+			opacity: 0.9;
+			width: 80%;
+			margin-left: auto;
+    		margin-right: auto;
+    		background-color: rgba(255, 255,255, 0.8);
+    		border-radius: 25px;
+		  	background-position: left top;
+		  	background-repeat: repeat;
+		  	padding: 20px; 
+		  	display:block;
+		}
+
+		a {
+			color: black;
+		}
+
+		a:visited {
+			color: gray;
+		}
 	</style>
 	
 <script src="ua-parser.js"></script>
 <script>		
-		
+
+
 		
 function onload(){
+	
     var parser = new UAParser();
 	var theOS = parser.getOS()
 	const tzid = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -32,6 +77,21 @@ function onload(){
 		console.log("could not refresh url using reload function")
 	}
 
+	// var cssLink = document.createElement("link");
+	// cssLink.href = "gcal.css"; 
+	// cssLink.rel = "stylesheet"; 
+	// cssLink.type = "text/css"; 
+	// frames['calendarFrame'].document.head.appendChild(cssLink);
+
+	
+	var frm = frames['calendarFrame'].document;
+	var otherhead = frm.getElementsByTagName("head")[0];
+	var link = frm.createElement("link");
+	link.setAttribute("rel", "stylesheet");
+	link.setAttribute("type", "text/css");
+	link.setAttribute("href", "gcal.css");
+	otherhead.appendChild(link);
+	
 	// if (theOS.name == "Mac OS") {
 	// 	document.body.innerHTML += " Hey there Buddhist buddy. You're on a Mac 🍎 in " + tzid + "\n"
 	// } else if (theOS.name == "Android") {
@@ -41,12 +101,34 @@ function onload(){
 	// } else if (theOS.name == "iOS") {
 	// 	document.body.innerHTML += " Hey there Buddhist buddy. You're on an iOS 📱 device in " + tzid
 	// }
+
 	
-	document.body.innerHTML += "<a href='" + webCalURL + "'>Subscribe with Apple Calendar</a> \n"
-	document.body.innerHTML += "<a href='" + googleCalendarSubscribe + "'>Subscribe with Google Calendar</a> \n"
+	document.getElementById('container').innerHTML += "<a href='" + webCalURL + "'>Subscribe with Apple Calendar</a> \n"
+	document.getElementById('container').innerHTML += "<a href='" + googleCalendarSubscribe + "'>Subscribe with Google Calendar</a> \n"
 }
 </script>
 
 </head>
-<body onload="onload()" ><iframe  id = 'calendar' src="" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe></body>
+<body onload="onload()" ><div id="container"> <iframe name="calendarFrame"  id = 'calendar' src="" frameborder="0" scrolling="no"></iframe></div>
+<div id="about">
+Hello everyone I am Bhikkhu Varrapanyo.
+
+I am an American Monk who has been a Buddhist since 2014 and a Buddhist Monk since 2018.
+
+This server is mainly a space for people interested in following along with my activities and events so that it is convenient and easy to make announcements about events and accessible for those who want to join.
+
+In terms of this community space operating other than a place to become aware of the Events I'll be hosting 
+this is really a place soely for Buddhism, Contemplation, compassion, Mindfulness, and Self or rather Non-Self development
+
+Outside of that, please leave it to other communities.
+
+Of course feel free to interact and ask questions but keep deeply and presently in mind the intention of this server which is to be a safe and convenient environment for Buddhists and meditator's to participate in
+
+Buddhism, Compassion, kindness, Gentleness, Contemplation, and Generosity with eachother
+
+Outside of that, enjoy the peace and quiet.
+
+
+-Bhikkhu Varrapanyo
+</div></body>
 </html>

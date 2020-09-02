@@ -21,6 +21,8 @@ function onload(){
 	const tzid = Intl.DateTimeFormat().resolvedOptions().timeZone;
 	var calendarSRC = "https://calendar.google.com/calendar/embed?src=buddhism.online.group%40gmail.com"
 	var webCalURL = "webcal://calendar.google.com/calendar/ical/buddhism.online.group%40gmail.com/private-4958f27bd0db06973b33fcb6a28ea88f/basic.ics"
+	var googleCalendarSubscribe = "https://calendar.google.com/calendar/r?cid=buddhism.online.group@gmail.com"
+	
 	calendarSRC = calendarSRC + "&ctz=" + tzid;
 	document.getElementById('calendar').src = calendarSRC;
 	try{
@@ -41,7 +43,7 @@ function onload(){
 	// }
 	
 	document.body.innerHTML += "<a href='" + webCalURL + "'>Subscribe with Apple Calendar</a> \n"
-	document.body.innerHTML += "<a href='" + calendarSRC + "'>Subscribe with Google Calendar</a> \n"
+	document.body.innerHTML += "<a href='" + googleCalendarSubscribe + "'>Subscribe with Google Calendar</a> \n"
 }
 </script>
 
